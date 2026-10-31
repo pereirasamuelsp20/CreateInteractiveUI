@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    margin: 0;
+    background: #080606;
+    color: #fff8f2;
+    font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  }
+
+  button,
+  input,
+  textarea {
+    font: inherit;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid #ff8b71;
+    outline-offset: 3px;
+  }
+}
+
+.relief-page {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    radial-gradient(circle at 16% 10%, #431012 0, transparent 34%),
+    radial-gradient(circle at 88% 90%, #25090d 0, transparent 36%),
+    #080606;
+  background-size: 28px 28px, 28px 28px, auto, auto;
+}
+
+.app-frame {
+  width: min(100%, 390px);
+  height: min(844px, calc(100svh - 48px));
+  min-height: 640px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #54302c;
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at 2% 52%, rgba(242, 37, 53, 0.2), transparent 40%),
+    radial-gradient(circle at 100% 92%, rgba(242, 37, 53, 0.12), transparent 34%),
+    linear-gradient(145deg, #210908, #100909 48%, #030505);
+  box-shadow: 0 32px 90px #000, inset 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.app-frame main {
+  scrollbar-width: none;
+}
+
+.app-frame main::-webkit-scrollbar {
+  display: none;
+}
+
+.primary-action,
+.secondary-action {
+  min-height: 55px;
+  border-radius: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  transition: transform 180ms, filter 180ms;
+}
+
+.primary-action {
+  border: 0;
+  background: linear-gradient(135deg, #ff6754, #ff263d 49%, #bd1230);
+  box-shadow: 0 12px 30px rgba(207, 20, 45, 0.25);
+}
+
+.secondary-action {
+  border: 1px solid #60342f;
+  background: rgba(21, 17, 17, 0.82);
+}
+
+.primary-action:hover,
+.secondary-action:hover {
+  filter: brightness(1.12);
+  transform: translateY(-1px);
+}
+
+.eyebrow,
+.section-label {
+  color: #ff6c5f;
+  text-transform: uppercase;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.section-label {
+  color: #c8b9b2;
+}
+
+.pulse-dot {
+  width: 9px;
+  height: 9px;
+  flex: none;
+  border-radius: 999px;
+  background: #ff4d43;
+  box-shadow: 0 0 0 5px rgba(255, 77, 67, 0.12), 0 0 14px #ff4d43;
+}
+
+.quick-card {
+  min-height: 108px;
+  padding: 14px;
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  grid-template-rows: 31px auto;
+  text-align: left;
+  border: 1px solid #4d2c29;
+  border-radius: 17px;
+  background: linear-gradient(145deg, #211313, #111);
+}
+
+.quick-card svg {
+  color: #ff5a4c;
+}
+
+.quick-card b {
+  align-self: center;
+  font-size: 11px;
+}
+
+.quick-card small {
+  grid-column: 1 / -1;
+  padding-top: 7px;
+  color: #9f9089;
+  font-size: 8px;
+  line-height: 1.45;
+}
+
+.stat-card {
+  min-height: 76px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #4a2d2a;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.stat-card b {
+  font-size: 21px;
+}
+
+.stat-card small {
+  color: #8f817b;
+  font-size: 7px;
+  text-transform: uppercase;
+}
+
+.field {
+  width: 100%;
+  height: 46px;
+  border: 1px solid #4d2c29;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 0 14px;
+  color: #fff8f2;
+  font-size: 11px;
+}
+
+.field:focus {
+  border-color: #ff5a4c;
+  outline: none;
+}
+
+@media (max-width: 520px) {
+  .relief-page {
+    display: block;
+    padding: 0;
+  }
+
+  .app-frame {
+    width: 100%;
+    height: 100svh;
+    min-height: 600px;
+    border: 0;
+    border-radius: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.figma-custom-code-fragment {
+  display: contents;
+}
+
+.figma-bypass-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 2147483647;
+  transform: translateY(-150%);
+  border-radius: 6px;
+  background: #111827;
+  color: #fff;
+  padding: 8px 12px;
+  font: 600 14px/1.2 system-ui, sans-serif;
+  text-decoration: none;
+}
+
+.figma-bypass-link:focus {
+  transform: translateY(0);
+}
